@@ -14,5 +14,5 @@ To train a ROLE model, you want to use ```decompose.py```. You need to place you
 in the data/ directory (see the example files there). Then you run:
 
 ```
-python decompose.py --data_prefix example --num_roles NUM_ROLES --filler_dim FILLER_DIM --role_dim ROLE_DIM
+python decompose.py --data_prefix example --num_roles NUM_ROLES --filler_dim FILLER_DIM --role_dim ROLE_DIM --role_learning
 ```

@@ -495,30 +495,31 @@ all_dev_data = []
 all_test_data = []
 all_extra_data = []
 
-# Make sure the number of fillers and the number of roles always matches
-for index, element in enumerate(indexed_train):
-    if len(element[0]) != len(indexed_train_roles[index]):
-        print(index, "ERROR!!!", element[0], indexed_train_roles[index])
-    else:
-        all_train_data.append((element[0], indexed_train_roles[index], element[1]))
+if not args.role_learning:
+    # Make sure the number of fillers and the number of roles always matches
+    for index, element in enumerate(indexed_train):
+        if len(element[0]) != len(indexed_train_roles[index]):
+            print(index, "ERROR!!!", element[0], indexed_train_roles[index])
+        else:
+            all_train_data.append((element[0], indexed_train_roles[index], element[1]))
 
-for index, element in enumerate(indexed_dev):
-    if len(element[0]) != len(indexed_dev_roles[index]):
-        print(index, "ERROR!!!", element[0], indexed_dev_roles[index])
-    else:
-        all_dev_data.append((element[0], indexed_dev_roles[index], element[1]))
+    for index, element in enumerate(indexed_dev):
+        if len(element[0]) != len(indexed_dev_roles[index]):
+            print(index, "ERROR!!!", element[0], indexed_dev_roles[index])
+        else:
+            all_dev_data.append((element[0], indexed_dev_roles[index], element[1]))
 
-for index, element in enumerate(indexed_test):
-    if len(element[0]) != len(indexed_test_roles[index]):
-        print(index, "ERROR!!!", element[0], indexed_test_roles[index])
-    else:
-        all_test_data.append((element[0], indexed_test_roles[index], element[1]))
+    for index, element in enumerate(indexed_test):
+        if len(element[0]) != len(indexed_test_roles[index]):
+            print(index, "ERROR!!!", element[0], indexed_test_roles[index])
+        else:
+            all_test_data.append((element[0], indexed_test_roles[index], element[1]))
 
-for index, element in enumerate(indexed_extra):
-    if len(element[0]) != len(indexed_extra_roles[index]):
-        print(index, "ERROR!!!", element[0], indexed_extra_roles[index])
-    else:
-        all_extra_data.append((element[0], indexed_extra_roles[index], element[1]))
+    for index, element in enumerate(indexed_extra):
+        if len(element[0]) != len(indexed_extra_roles[index]):
+            print(index, "ERROR!!!", element[0], indexed_extra_roles[index])
+        else:
+            all_extra_data.append((element[0], indexed_extra_roles[index], element[1]))
 
 weights_matrix = None
 
