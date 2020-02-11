@@ -520,6 +520,19 @@ if not args.role_learning:
             print(index, "ERROR!!!", element[0], indexed_extra_roles[index])
         else:
             all_extra_data.append((element[0], indexed_extra_roles[index], element[1]))
+else:
+    # Add dummy roles to the training data, these will be ignored since we are role learning
+    for index, element in enumerate(indexed_train):
+        all_train_data.append((element[0], 0, element[1]))
+
+    for index, element in enumerate(indexed_dev):
+        all_dev_data.append((element[0], 0, element[1]))
+
+    for index, element in enumerate(indexed_test):
+        all_test_data.append((element[0], 0, element[1]))
+
+    for index, element in enumerate(indexed_extra):
+        all_extra_data.append((element[0], 0, element[1]))
 
 weights_matrix = None
 
